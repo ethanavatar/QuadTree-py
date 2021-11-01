@@ -7,7 +7,7 @@
 Clone the repo and navigate into it.
 ```bash
 git clone https://github.com/ethanavatar/QuadTree-py.git
-cd QuadTree/
+cd QuadTree-py/
 ```
 
 Install pygame if you don't have it already,
