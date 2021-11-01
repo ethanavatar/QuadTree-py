@@ -52,18 +52,21 @@ By default, the window is 1200x1200 pixels, the game board is 200x200 cells, and
 ### `class Quad(boundary : Rect, capacity : int)`
  - `boundary` : A `Rect` representing the size of the initial quad
  - `capacity` : The number of points allowed in a quad before it subdivides
-    #### `void subdivide()`
+ - `subdivide() -> None`
     Splits the quad into four equally sized quadrants
 
-    #### `bool insert(point : Point)`
+ - `insert(point : Point) -> bool`
+
     Tries to insert a point into the quad. If it doesnt exist within its boundary or its at capacity, it subdivides and calls `insert` recursively to the newly made quads.
      - `point` : The `Point` to insert.
 
-    #### `list query(rect : Rect)`
+ - `query(rect : Rect) - list`
+
     Returns a list of Points that are within the given Rect.
      - `rect` : A `Rect` representing the space in which to query point within.
 
-    #### `void draw(surface : pygame.surface, color)`
+ - `draw(surface : pygame.surface, color) -> None`
+ 
     Draws a wireframe rectangle for the quad, and recursively, for all of its child quads.
      - `surface` : The `pygame.surface` to draw the quadtree to.
      - `color` : The color to draw the wireframe rectangles in.
