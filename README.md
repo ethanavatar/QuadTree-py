@@ -1,4 +1,4 @@
-# Game of Life
+# QuadTree-py
 
 ### An interactive pygame implementation of quadtree spatial quantization
 
