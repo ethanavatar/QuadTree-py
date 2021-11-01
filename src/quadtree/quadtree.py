@@ -10,10 +10,7 @@ class Point:
     def __repr__(self):
         return f'({self.x}, {self.y})'
 
-    def __eq__(self, other):
-        return self.x == other.x and self.y == other.y
-
-class Rectangle:
+class Rect:
     def __init__(self, x, y, w, h):
         self.x = x
         self.y = y
@@ -33,10 +30,10 @@ class Rectangle:
                 and self.y + self.h > other.y\
 
     def split(self):
-        return (Rectangle(self.x, self.y, self.w / 2, self.h / 2),
-                Rectangle(self.x + self.w / 2, self.y, self.w / 2, self.h / 2),
-                Rectangle(self.x, self.y + self.h // 2, self.w / 2, self.h / 2),
-                Rectangle(self.x + self.w / 2, self.y + self.h / 2, self.w / 2, self.h / 2))
+        return (Rect(self.x, self.y, self.w / 2, self.h / 2),
+                Rect(self.x + self.w / 2, self.y, self.w / 2, self.h / 2),
+                Rect(self.x, self.y + self.h // 2, self.w / 2, self.h / 2),
+                Rect(self.x + self.w / 2, self.y + self.h / 2, self.w / 2, self.h / 2))
 
 class Quad:
     def __init__(self, boundary, capacity):
@@ -94,15 +91,6 @@ class Quad:
 
         return results
 
-    def clear(self):
-        self.points = []
-        if self.divided:
-            self.q1.clear()
-            self.q2.clear()
-            self.q3.clear()
-            self.q4.clear()
-
-        
     def draw(self, surface, color):
         pygame.draw.rect(surface, color, pygame.Rect((self.boundary.x * CELL_WIDTH, self.boundary.y * CELL_HEIGHT), (self.boundary.w * CELL_WIDTH, self.boundary.h * CELL_HEIGHT)), 1)
         if self.divided:
