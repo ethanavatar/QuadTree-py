@@ -133,7 +133,7 @@ class App:
                 pygame.draw.rect(self.screen, color, pygame.Rect((col * CELL_WIDTH, row * CELL_HEIGHT), (CELL_WIDTH, CELL_HEIGHT)), FILL_CELL ^ 1)
            
         if SHOW_QUADTREE:
-            self.cellmap.quadtree.draw(self.screen, WHITE)
+            self.cellmap.quadtree.draw(self.screen, BLUE)
         
         pygame.display.update()
 

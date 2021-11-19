@@ -32,7 +32,7 @@ class Rect:
     def split(self):
         return (Rect(self.x, self.y, self.w / 2, self.h / 2),
                 Rect(self.x + self.w / 2, self.y, self.w / 2, self.h / 2),
-                Rect(self.x, self.y + self.h // 2, self.w / 2, self.h / 2),
+                Rect(self.x, self.y + self.h / 2, self.w / 2, self.h / 2),
                 Rect(self.x + self.w / 2, self.y + self.h / 2, self.w / 2, self.h / 2))
 
 class Quad:
