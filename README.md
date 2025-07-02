@@ -5,8 +5,6 @@
 ## Contents
  - [Installation](#Installation)
  - [Usage](#Usage)
- - [API Reference](#API-Reference)
- - [TODO](#TODO)
 
 ## Installation
 
@@ -36,40 +34,3 @@ You can use:
 By default, the window is 1200x1200 pixels, the game board is 200x200 cells, and it runs at 60fps. These constants are stored at the top of the [`locals.py`](src/quadtree/locals.py) file if you feel like changing them.
 
 <img title="Running Example" alt="Running Example" src="images/example-1200x1200.gif">
-
-## API Reference
-### `class Point(x : int, y : int)`
- - `x` : X-position
- - `y` : Y-position
- 
-
-### `class Rect( x : int, y : int, w : int, h : int)`
- - `x` : X-position
- - `y` : Y-position
- - `w` : Width
- - `h` : Height
-
-### `class Quad(boundary : Rect, capacity : int)`
- - `boundary` : A `Rect` representing the size of the initial quad
- - `capacity` : The number of points allowed in a quad before it subdivides
- - `subdivide() -> None`
-    Splits the quad into four equally sized quadrants
-
- - `insert(point : Point) -> bool`
-
-    Tries to insert a point into the quad. If it doesnt exist within its boundary or its at capacity, it subdivides and calls `insert` recursively to the newly made quads.
-     - `point` : The `Point` to insert.
-
- - `query(rect : Rect) - list`
-
-    Returns a list of Points that are within the given Rect.
-     - `rect` : A `Rect` representing the space in which to query point within.
-
- - `draw(surface : pygame.surface, color) -> None`
- 
-    Draws a wireframe rectangle for the quad, and recursively, for all of its child quads.
-     - `surface` : The `pygame.surface` to draw the quadtree to.
-     - `color` : The color to draw the wireframe rectangles in.
-
-## TODO
- - Make more generic; framework agnostic
